@@ -141,7 +141,7 @@ class Game extends Component {
                     <div className="row">
                         <div className="topRow">
                             <div className="gameRound">
-                                {this.state.round}
+                                {this.state.round}/4
                             </div>
                             <div style={{ margin:"auto", marginBotoom:"4%", background: "repeating-linear-gradient( 90deg, #eb553a 0, #eb553a 1ch, transparent 0, transparent 1.5ch ) 0 100%/100% 0.3rem no-repeat", font: "5ch consolas, monospace", letterSpacing: "0.5ch", color: "transparent", fontSize: "1.5rem" }}>
                                 {this.state.city}
