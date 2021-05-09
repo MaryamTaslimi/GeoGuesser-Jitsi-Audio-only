@@ -23,7 +23,7 @@ class Game extends Component{
             showModal:false,
             isConnected:false
         }
-        this.ENDPOINT="https://cguess-backend.herokuapp.com";
+        this.ENDPOINT="https://wfhomie-cguess-backecnd.herokuapp.com";
         this.socket = socketIOClient(this.ENDPOINT,{
             transports: ['polling']
          });
