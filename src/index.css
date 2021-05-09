@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "CustomFont";
+  font-family: "Nunito-Black";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -13,6 +13,30 @@ code {
   font-family: "CustomFont";
   font-display: swap;
   src: url("./assets/Boogaloo-Regular.ttf")format('truetype');
+}
+
+@font-face {
+  font-family: "Nunito-Black";
+  font-display: swap;
+  src: url("./assets/Nunito-Black.otf")format('opentype');
+}
+
+@font-face {
+  font-family: "Nunito-Bold";
+  font-display: swap;
+  src: url("./assets/Nunito-Bold.otf")format('opentype');
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("./assets/Roboto.otf")format('opentype');
+}
+
+@font-face {
+  font-family: "Komika";
+  font-display: swap;
+  src: url("./assets/Komika.otf")format('opentype');
 }
 
 html,

@@ -6,8 +6,7 @@ class Modal extends Component {
     super(props);
   }
 
-  render(){
-    
+  render(){    
     if(this.props.imageCSS){
       this.section="";
       this.showHideClassName = this.props.show ? this.props.imageCSS+" display-block" : this.props.imageCSS+" display-none";
@@ -19,8 +18,7 @@ class Modal extends Component {
     return (
       <div className={this.showHideClassName}>
         <section className={this.section}>
-          {this.props.children}
-          
+          {this.props.children}          
         </section>
       </div>
     );

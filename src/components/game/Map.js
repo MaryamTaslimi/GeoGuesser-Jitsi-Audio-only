@@ -342,7 +342,7 @@ class Map extends Component{
         <div
           id="google-map"
           ref={this.googleMapRef}
-          style={{ width: '100%', height: '70%',borderRadius:"10px" }}
+          style={{ width: '100%', height: '100%',borderRadius:"10px" }}
         />
       )
     }
