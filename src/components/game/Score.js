@@ -62,15 +62,14 @@ class Score extends Component {
     render() {
         return (
             <div>
-                <ul>
+                <ul style={{paddingLeft: "0px"}}>
                     {this.state.players.map(item => (
-                        <li className="list">
-                            <div className="list-item">
+                        <li className="list" style={{  borderBottom: "2px solid rgba(0, 0, 0, .1)", paddingLeft: "30px"}}>
+                            <div className="list-item" style={{flexDirection:"column"}}>
                                 <div className="score_info">
                                     <div className="name">{item.name}</div>
                                 </div>
-                                <div className="scores">{item.score}</div>
-
+                                <div className="scores" style={{fontSize:"16px"}}>{item.score} Points</div>
                                 <div></div>
                             </div>
                         </li>

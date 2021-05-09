@@ -116,7 +116,7 @@ grid-template-rows: min-content min-content min-content min-content; */
   /* background-color: #BED9A6; */
   height: 60vh;
   padding-right: 0px;
-  padding-left: 10px;
+  padding-left: 0px;
   background: #fff;
   border-right: 2px solid rgba(0, 0, 0, .25);
   border-bottom-left-radius: 15px;
@@ -157,7 +157,7 @@ grid-template-rows: min-content min-content min-content min-content; */
       /* background-color: #BED9A6; */
       height: 100%;
       padding-right: 0px;
-      padding-left: 10px;
+      padding-left: 0px;
       background: #fff;
       border-right: 2px solid rgba(0, 0, 0, .25);
       /* border-bottom-left-radius: 15px; */
@@ -179,20 +179,19 @@ grid-template-rows: min-content min-content min-content min-content; */
 
 ul {
   list-style-type: none;
-  border-bottom: 2px solid rgba(0, 0, 0, .1);
 }
 
 .msg {
   white-space: normal;
-  height: 32vh;
+  height: 33vh;
   font-size: 16px;
   overflow-y: scroll;
   overflow-x: auto;
   flex-direction: column-reverse;
   max-width: 100%;
-  padding: 10px;
+  padding: 1vh;
   display: flex;
-  height: 36vh;
+  /* height: 33.68vh; */
 }
 
 .msg::-webkit-scrollbar {
@@ -224,6 +223,10 @@ ul {
   border: 1px solid #553585;
   color: black;
   background-color: transparent;
+}
+
+.send-btn :hover{
+  border: 2px solid #553585;
 }
 
 input.input-msg:focus {
@@ -316,7 +319,7 @@ button.send-btn:focus {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: rgba(251, 251, 251, 1);
+  background: rgb(225, 221, 221);
 }
 
 .chatmsg-username {
@@ -433,7 +436,6 @@ button.send-btn:focus {
 .list-item {
   flex-direction: row;
   display: flex;
-  align-items: center;
 }
 
 .avatar {
@@ -460,13 +462,14 @@ button.send-btn:focus {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-family: 'Nunito-Bold';
-  font-size: 20px;
+  font-size: 18px;
+  text-align: left;
 }
 
 .scores {
   border-radius: 20px;
   color: black;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 

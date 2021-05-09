@@ -63,7 +63,7 @@ class Chat extends Component {
                 ))}
             </ul>
             <form onSubmit={(e) => this.handleClick(e)} >
-                    <input className="form-control" id="inputPassword2" type="text" name="msg" placeholder="Chat now" style={{ height: "18px", width:"100%", borderTop:"2px solid rgba(0, 0, 0, .25)" }} />
+                    <input className="form-control" id="inputPassword2" type="text" name="msg" placeholder="Chat now" style={{ height: "3vh", width:"100%", borderTop:"2px solid rgba(0, 0, 0, .25)", padding:"1vh", marginTop:"1.5vh", borderBottomRightRadius: "15px" }} />
             </form>
         </div>);
     }
