@@ -12,6 +12,7 @@ export class Login extends React.Component {
       play: false,
       show: false,
       name: '',
+      key: '',
       url: '/'
     }
     this.change = this.change.bind(this);
@@ -30,15 +31,16 @@ export class Login extends React.Component {
       })
     }
     this.setState({
-      name: e.target.value
+      [e.target.name]: e.target.value
     })
   };
 
   setUsername = () => {
-    if (this.state.name == null || this.state.name === '') {
+    if (this.state.name == null || this.state.name === '' || this.state.key == null || this.state.key == '') {
     }
     this.cookies = new Cookies();
     this.cookies.set('username', this.state.name, { path: '/' });
+    this.cookies.set('key', this.state.key, { path: '/' });
   };
 
   render() {
@@ -53,7 +55,8 @@ export class Login extends React.Component {
         <div className="content">
           <div className="form" >
             <div className="form-group">
-              <input onChange={this.change} type="text" name="username" placeholder="Type Your Name" id="username" required="required" />
+              <input onChange={this.change} type="text" name="name" placeholder="Type Your Name" id="username" required="required" />
+              <input onChange={this.change} type="text" name="key" placeholder="Type the Room Name" id="key" required="required" style={{display:"none"}}/>
             </div>
             {/* <label className="alert alert-danger" style={{ visibility: "hidden", fontSize: "15px" }} id="msg"></label> */}
           </div>

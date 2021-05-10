@@ -21,9 +21,9 @@ const App = (props) => {
             TILE_VIEW_MAX_COLUMNS: 6,
             SHOW_CHROME_EXTENSION_BANNER: false,
             TOOLBAR_ALWAYS_VISIBLE: false,
-            TOOLBAR_BUTTONS: ['microphone','camera'],
+            TOOLBAR_BUTTONS: ['microphone', 'camera'],
             HIDE_INVITE_MORE_HEADER: true
-        }        
+        }
     };
     const { loading, error, jitsi } = useJitsi(jitsiConfig);
 
@@ -55,6 +55,9 @@ class Game extends Component {
         if (!this.cookies.get('username')) {
             this.cookies.set('username', 'anonymous', { path: '/' });
         }
+        this.socket.emit('setkeyroom',{            
+            key: this.cookies.get('key')
+        })
         this.slide = 0;
     }
 
@@ -136,14 +139,14 @@ class Game extends Component {
             return (
                 <div className="container-fluid">
                     <div className="row">
-                        <img src={logo} alt="CGuess Logo" style={{ height: "50px", width: "auto", margin:"auto" }} />
+                        <img src={logo} alt="CGuess Logo" style={{ height: "50px", width: "auto", margin: "auto" }} />
                     </div>
                     <div className="row">
                         <div className="topRow">
                             <div className="gameRound">
                                 {this.state.round}/4
                             </div>
-                            <div style={{ margin:"auto", marginBotoom:"4%", background: "repeating-linear-gradient( 90deg, #eb553a 0, #eb553a 1ch, transparent 0, transparent 1.5ch ) 0 100%/100% 0.3rem no-repeat", font: "5ch consolas, monospace", letterSpacing: "0.5ch", color: "transparent", fontSize: "1.5rem" }}>
+                            <div style={{ margin: "auto", marginBotoom: "4%", background: "repeating-linear-gradient( 90deg, #eb553a 0, #eb553a 1ch, transparent 0, transparent 1.5ch ) 0 100%/100% 0.3rem no-repeat", font: "5ch consolas, monospace", letterSpacing: "0.5ch", color: "transparent", fontSize: "1.5rem" }}>
                                 {this.state.city}
                             </div>
                             <div className="gameTimer">
@@ -152,13 +155,13 @@ class Game extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-2 score" style={{ flex:"0 0 18%", maxWidth:"18%" }}>
+                        <div className="col-md-2 score" style={{ flex: "0 0 18%", maxWidth: "18%" }}>
                             <Score socket={this.socket} />
                         </div>
-                        <div className="col-md map font-size">
+                        <div className="col-md map font-size" style={{paddingRight:"0px", paddingLeft:"0px"}}>
                             <Map style={{ position: "relative" }} socket={this.socket} />
                         </div>
-                        <div className="col-md-3 chat" style={{ flex:"0 0 18%", maxWidth:"18%", paddingRight:"0px", paddingLeft:"0px" }}>
+                        <div className="col-md-3 chat" style={{ flex: "0 0 20%", maxWidth: "20%", paddingRight: "0px", paddingLeft: "0px" }}>
                             <Modal show={this.state.showModal} imageCSS={"modalImage"}>
                                 <div className="modal-content" style={{ backgroundColor: "rgba(0, 0, 0, 0.005)" }}>
                                     <img alt="" style={{
@@ -169,7 +172,7 @@ class Game extends Component {
                                         objectFit: "contain",
                                         display: "inline-block",
                                         verticalAlign: "middle",
-                                        height: "100%"                                        
+                                        height: "100%"
                                     }} src={this.state.showFact} />
                                     <a className="prev" onClick={() => this.plusSlides(-1)}>&#10094;</a>
                                     <a className="next" onClick={() => this.plusSlides(1)}>&#10095;</a>
@@ -178,8 +181,8 @@ class Game extends Component {
                             <Chat socket={this.socket} username={this.cookies.get('username')} />
                         </div>
                     </div>
-                    <div className="row" style={{ width: "100%",  borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px" }}>
-                        <div style={{ paddingTop: "25px", width: "100%", height: "200px", margin: "auto", marginTop:"20px", background: "#fff", borderRadius:"15px" }}>
+                    <div className="row" style={{ width: "100%", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px" }}>
+                        <div style={{ paddingTop: "25px", width: "100%", height: "200px", margin: "auto", marginTop: "20px", background: "#fff", borderRadius: "15px" }}>
                             <App style={{}} localDisplayname={this.cookies.get('username')} />
                         </div>
                     </div>

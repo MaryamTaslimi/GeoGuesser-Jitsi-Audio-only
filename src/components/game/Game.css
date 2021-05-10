@@ -19,16 +19,16 @@
   top: 57px;
   right: 19%;
   position: absolute;
-  font-size: 21px;
+  font-size: 1.5rem;
   border-radius: 50%;
   border: 3px solid #000;
   color: #000;
-  font-weight: 700;
   vertical-align: middle;
   pointer-events: none;
   user-select: none;
   box-shadow: 3px 3px 6px rgb(33 33 33 / 20%);
   line-height: 1.2;
+  font-family: 'Roboto';
 }
 
 .gameTimer::before {
@@ -103,7 +103,7 @@
 }
 
 .container-fluid {
-  margin: 0px 70px 10px 70px;
+  margin: 0px 53px 10px 53px;
   padding: 5px;
   width: auto;
   /* display: grid;
@@ -113,7 +113,7 @@ grid-template-rows: min-content min-content min-content min-content; */
 
 .score {
   /* background-color: #BED9A6; */
-  height: 60vh;
+  height: 57vh;
   padding-right: 0px;
   padding-left: 0px;
   background: #fff;
@@ -123,12 +123,12 @@ grid-template-rows: min-content min-content min-content min-content; */
 
 .map {
   background-color: #fff;
-  height: 60vh;
+  height: 57vh;
 }
 
 .chat {
   background-color: #fff;
-  height: 60vh;
+  height: 57vh;
   border-left: 2px solid rgba(0, 0, 0, .25);
   border-bottom-right-radius: 15px;
 }
@@ -182,7 +182,7 @@ ul {
 
 .msg {
   white-space: normal;
-  height: 33vh;
+  height: 28vh;
   font-size: 16px;
   overflow-y: scroll;
   overflow-x: auto;
@@ -224,7 +224,7 @@ ul {
   background-color: transparent;
 }
 
-.send-btn :hover{
+.send-btn:hover{
   border: 2px solid #553585;
 }
 
@@ -461,8 +461,9 @@ button.send-btn:focus {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-family: 'Nunito-Bold';
-  font-size: 18px;
+  font-size: 16px;
   text-align: left;
+  color: #39b0a4;
 }
 
 .scores {
