@@ -10,7 +10,7 @@ import Modal from "../Modal/Modal";
 import { useJitsi } from 'react-jutsu'
 const App = (props) => {
     const jitsiConfig = {
-        roomName: 'testcguess',
+        roomName: props.roomName,
         displayName: props.localDisplayname,
         password: 'dattebayo',
         subject: 'fan',
@@ -47,17 +47,18 @@ class Game extends Component {
             showModal: true,
             isConnected: false
         }
+        this.cookies = new Cookies();
         this.ENDPOINT = "https://wfhomie-cguess-backecnd.herokuapp.com/";
         this.socket = socketIOClient(this.ENDPOINT, {
-            transports: ['polling']
+            transports: ['polling'],
+            query: {
+                key: this.cookies.get('key')
+              }
         });
-        this.cookies = new Cookies();
+
         if (!this.cookies.get('username')) {
             this.cookies.set('username', 'anonymous', { path: '/' });
         }
-        this.socket.emit('setkeyroom',{            
-            key: this.cookies.get('key')
-        })
         this.slide = 0;
     }
 
@@ -183,7 +184,7 @@ class Game extends Component {
                     </div>
                     <div className="row" style={{ width: "100%", borderBottomLeftRadius: "15px", borderBottomRightRadius: "15px" }}>
                         <div style={{ paddingTop: "25px", width: "100%", height: "200px", margin: "auto", marginTop: "20px", background: "#fff", borderRadius: "15px" }}>
-                            <App style={{}} localDisplayname={this.cookies.get('username')} />
+                            <App style={{}} localDisplayname={this.cookies.get('username')} roomName={this.cookies.get('key')}  />
                         </div>
                     </div>
                 </div>

@@ -56,7 +56,7 @@ export class Login extends React.Component {
           <div className="form" >
             <div className="form-group">
               <input onChange={this.change} type="text" name="name" placeholder="Type Your Name" id="username" required="required" />
-              <input onChange={this.change} type="text" name="key" placeholder="Type the Room Name" id="key" required="required" style={{display:"none"}}/>
+              <input onChange={this.change} type="text" name="key" placeholder="Type the Room Name" id="key" required="required" />
             </div>
             {/* <label className="alert alert-danger" style={{ visibility: "hidden", fontSize: "15px" }} id="msg"></label> */}
           </div>

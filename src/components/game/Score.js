@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Cookies from 'universal-cookie';
 import "./Game.css";
 import Modal from "../Modal/Modal";
-import Game from "../game/Game.js"
 
 class Score extends Component {
     constructor(props) {
