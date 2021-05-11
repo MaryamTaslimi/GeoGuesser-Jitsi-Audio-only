@@ -20,7 +20,7 @@ class Score extends Component {
 
     hideModal = () => {
         this.setState({ showResult: false });
-        this.props.socket.emit('restart',{username:this.cookies.get('username')})
+        this.props.socket.emit('restart', { username: this.cookies.get('username') })
     };
     componentDidMount() {
         this.props.socket.on('scores', data => {
@@ -39,12 +39,15 @@ class Score extends Component {
                 const list = [...state.players]
                 list.forEach(i => {
                     if (i.name === data.username) {
-                        i.score += data.score;
+                        i.score = data.score;
                     }
                 })
                 return list;
 
             })
+        })
+        this.props.socket.on('hideothermodals', () => {
+            this.setState({ showResult: false });
         })
     }
     winnerFunc = () => {
