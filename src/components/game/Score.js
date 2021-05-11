@@ -20,8 +20,7 @@ class Score extends Component {
 
     hideModal = () => {
         this.setState({ showResult: false });
-        window.location.reload();
-        // return <Game isConnected="true"></Game>
+        this.props.socket.emit('restart',{username:this.cookies.get('username')})
     };
     componentDidMount() {
         this.props.socket.on('scores', data => {
@@ -66,17 +65,17 @@ class Score extends Component {
                 basescore = e.score;
             }
         })
-        return (basescore == score && basescore!=0)? true : false;
+        return (basescore == score && basescore != 0) ? true : false;
     }
     render() {
         return (
             <div>
                 <ul style={{ paddingLeft: "0px" }}>
-                    {this.state.players.sort((a, b) => a.score > b.score ? -1:1).map(item => this.crownFunc(item.score) ? (
+                    {this.state.players.sort((a, b) => a.score > b.score ? -1 : 1).map(item => this.crownFunc(item.score) ? (
                         <li className="list" style={{ borderBottom: "2px solid rgba(0, 0, 0, .1)", paddingLeft: "40px" }}>
                             <div className="list-item" style={{ flexDirection: "column" }}>
                                 <div>
-                                &#128081;
+                                    &#128081;
                                 </div>
                                 <div className="score_info">
                                     <div className="name">{item.name}</div>
