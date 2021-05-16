@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../assets/CGuess.png"
+import image from "../../assets/wfhomie-geoguesser.svg"
 import "./style.scss";
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
@@ -49,8 +49,8 @@ export class Login extends React.Component {
     }
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="image">
-          <img src={image} alt="CGuess Logo" />
+        <div className="row">
+          <img src={image} alt="wfhomie-geoguesser Logo" style={{ height: "70px", width: "auto", margin: "auto" }} />
         </div>
         <div className="content">
           <div className="form" >

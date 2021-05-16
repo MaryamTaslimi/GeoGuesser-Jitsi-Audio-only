@@ -25,7 +25,7 @@ class Chat extends Component {
             this.props.socket.on("joinMsg", data => {
                 console.log('Join msg aaya!!')
                 this.setState({
-                    msgList: this.state.msgList + '\n' + data.user + ' has joined the game'
+                    msgList: this.state.msgList + '\n' + data.username + ' has joined the game'
                 })
             })
         });

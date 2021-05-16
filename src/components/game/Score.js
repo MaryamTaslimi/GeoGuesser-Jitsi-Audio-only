@@ -10,10 +10,17 @@ class Score extends Component {
             players: [
 
             ],
-            showResult: false
+            showResult: false,
+            showHowto: true
         }
         this.cookies = new Cookies();
     }
+
+    hideHowto = () => {
+        this.setState({ showHowto: false })
+        this.props.socket.emit('start' , {})
+    }
+
     showModal = () => {
         this.setState({ showResult: true });
     };
@@ -100,10 +107,17 @@ class Score extends Component {
                     )
                     )}
                 </ul>
+                <Modal show={this.state.showHowto} imageCSS={"winnerModal"}>
+                    <div className="modal-top">
+                        <div class="modal-header" style={{ fontSize: "25px", textAlign:"center" }}>How To Play!</div>
+                        <div class="modal-header" style={{ fontSize: "21px", fontWeight:"lighter" }}>Each player gets 60 seconds to guess the city based on the clues provided to them in a pictorial format and then mark it on the map.The time taken and the accuracy of the marked location play an important factor in determining your score!</div>                        
+                        <button style={{ marginBottom: "0px", padding: "0.5rem 1rem 0.5rem 1rem" }} className="send-btn modal-icon" onClick={this.hideHowto} id="modal-close">Start</button>
+                    </div>
+                </Modal>
                 <Modal show={this.state.showResult} imageCSS={"winnerModal"}>
                     <div className="modal-top">
                         <div class="modal-header" style={{ fontSize: "32px" }}>{this.winner} is the winner!!</div>
-                        <button style={{ marginBottom: "0px", padding: "0.5rem 1rem 0.5rem 1rem" }} className="send-btn modal-icon" onClick={this.hideModal} id="modal-close">Close</button>
+                        <button style={{ marginBottom: "0px", padding: "0.5rem 1rem 0.5rem 1rem" }} className="send-btn modal-icon" onClick={this.hideModal} id="modal-close">Restart</button>
                     </div>
                 </Modal>
             </div>
