@@ -110,7 +110,7 @@ class Score extends Component {
                 <Modal show={this.state.showHowto} imageCSS={"winnerModal"}>
                     <div className="modal-top">
                         <div class="modal-header" style={{ fontSize: "25px", textAlign:"center" }}>How To Play!</div>
-                        <div class="modal-header" style={{ fontSize: "21px", fontWeight:"lighter" }}>Each player gets 60 seconds to guess the city based on the clues provided to them in a pictorial format and then mark it on the map.The time taken and the accuracy of the marked location play an important factor in determining your score!</div>                        
+                        <div class="modal-header" style={{ fontSize: "21px", fontWeight:"lighter" }}>guess the city based on the clues in a pictorial format and pin its location on the map!</div>                        
                         <button style={{ marginBottom: "0px", padding: "0.5rem 1rem 0.5rem 1rem" }} className="send-btn modal-icon" onClick={this.hideHowto} id="modal-close">Start</button>
                     </div>
                 </Modal>

@@ -50,13 +50,13 @@ export class Login extends React.Component {
     return (
       <div className="base-container" ref={this.props.containerRef}>
         <div className="row">
-          <img src={image} alt="wfhomie-geoguesser Logo" style={{ height: "70px", width: "auto", margin: "auto" }} />
+          <img src={image} alt="wfhomie-geoguesser Logo" style={{ height: "80px", width: "auto", margin: "auto" }} />
         </div>
         <div className="content">
           <div className="form" >
             <div className="form-group">
-              <input onChange={this.change} type="text" name="name" placeholder="Type Your Name" id="username" required="required" />
-              <input onChange={this.change} type="text" name="key" placeholder="Type the Room Name" id="key" required="required" />
+              <input onChange={this.change} type="text" name="name" placeholder="Type Your Name" id="username" required="required" style={{marginBottom: "15px"}} />
+              <input onChange={this.change} type="text" name="key" placeholder="Type the Room Name" id="key" required="required" style={{ marginTop: "0px", marginBottom: "15px"}} />
             </div>
             {/* <label className="alert alert-danger" style={{ visibility: "hidden", fontSize: "15px" }} id="msg"></label> */}
           </div>

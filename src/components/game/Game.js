@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./Game.css"
 import Map from './Map';
-import logo from "../../assets/wfhomie-geoguesser.svg"
+import logo from "../../assets/wfhomie-geoguesser.png"
 import Score from './Score';
 import Chat from './Chat.jsx'
 import socketIOClient from "socket.io-client";
