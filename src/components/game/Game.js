@@ -15,13 +15,16 @@ const App = (props) => {
         password: 'dattebayo',
         subject: 'fan',
         parentNode: 'jitsi-container',
-        allow: "microphone; camera",
-        configOverwrite: { prejoinPageEnabled: false },
+        allow: "microphone",
+        configOverwrite: {
+            prejoinPageEnabled: false,
+            startAudioOnly: true 
+        },
         interfaceConfigOverwrite: {
             TILE_VIEW_MAX_COLUMNS: 6,
             SHOW_CHROME_EXTENSION_BANNER: false,
             TOOLBAR_ALWAYS_VISIBLE: false,
-            TOOLBAR_BUTTONS: ['microphone', 'camera'],
+            TOOLBAR_BUTTONS: ['microphone'],
             HIDE_INVITE_MORE_HEADER: true
         }
     };
