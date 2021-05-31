@@ -51,7 +51,7 @@ class Game extends Component {
             isConnected: false
         }
         this.cookies = new Cookies();
-        this.ENDPOINT = "https://wfhomie-cguess-backecnd.herokuapp.com/";
+        this.ENDPOINT = "https://wfhomie-audio-cguess-backecnd.herokuapp.com/";
         this.socket = socketIOClient(this.ENDPOINT, {
             transports: ['polling'],
             query: {
